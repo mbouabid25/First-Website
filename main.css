@@ -1,0 +1,144 @@
+body {
+  font-family : 'Helvetica'; 
+  background-color : #000000;
+}
+
+#menu {
+	margin: 0 auto;
+	background-color: #fff
+}
+
+header {
+	background-color: #000000;
+	height: 50px;
+	padding: 5px;
+}
+
+header h1 {
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+}
+
+.mymenu {
+	padding: 10px 0 10px 0;
+	text-align: center;
+	line-height: 0px;
+	background-color: #fff;
+}
+
+ul.mymenu {
+	margin-top: 15px;
+}
+
+.mymenu li {
+	display: inline;
+	padding: 0 10px 0 10px;
+	font-size: 20px;
+}
+
+.mymenu a {
+	text-decoration: none;
+	color: #000000;
+	padding: 0px;
+	text-transform: uppercase;
+}
+
+.mymenu a:hover  {
+	color : #fff;
+}
+
+.selection {
+	position: relative; 
+    width: 100%; 
+    height: 100vh;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.selection h1 {
+	text-align: center;
+	color : #fff;
+	font-size: 6rem;
+	padding: 20px;
+	margin: 15px;
+	z-index: 1;
+}
+
+.video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.box {
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.box div {
+	background-color: #fff;
+    margin: 25px;
+    padding: 10px;
+    width: 300px;
+}
+
+.secondheader {
+	text-align: center;
+	font-family: 'Times New Roman' , times-roman, georgia, serif;
+	font-size: 40px;
+	line-height: 20px;
+	letter-spacing: -1px;color: #444;
+}
+
+.thirdheader {
+	font-family: "Lucida Grande", Tahoma;
+	font-size: 10px;
+	font-weight: lighter;
+	font-variant: normal;
+	text-transform: uppercase;
+	color: #666666;
+    margin-top: 10px;
+	text-align: center!important;
+	letter-spacing: 0.3em;
+}
+
+.paragraph {
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+	font-size: 14px;
+	line-height: 20px;
+	text-transform: uppercase;
+	margin : 100px;
+	color: #444;
+}
+
+#bottom {
+	margin: 0 auto;
+	background-color: #fff
+}
+
+footer {
+	background-color: #000000;
+	height: 50px;
+	width: 100%;
+	padding: 30px;
+}
+
+footer f1 {
+	font-family : 'Helvetica'; 
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+}
+
+.icons {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
