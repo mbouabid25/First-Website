@@ -1,4 +1,4 @@
-!DOCTYPE html>
+
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -11,27 +11,153 @@
                 <h1> Marwa's website </h1>
             </header>
             <nav>
-                <ul class = "mymenu">
-                    <li> <a href = "index.html"> Home </a> </li>
-                    <li> <a href = "page2.html"> Who I am  </a> </li>
-                    <li> <a href = "page3.html"> My life </a> </li>
-                    <li> <a href = "page4.html"> Contact me </a> </li>
-                </ul>
+                <table class = "mymenu">
+                    <div class="container">
+                    <div class="row">
+                    <div class="col-sm">
+                    <a href = "index.html"> Home </a>
+                    </div>
+                    <div class="col-sm">
+                    <a href = "page2.html"> Sample features  </a>
+                    </div>
+                    <div class="col-sm">
+                    <a href = "page3.html"> My life </a>
+                    </div>
+                    <div class="col-sm">
+                    <a href = "page4.html"> Contact me </a>  </a>
+                    </div>
+                    </div>
+                    </div>
+                </table>
             </nav>
     <body>
 
-    <div class = "box">
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn"> Select a country </button>
+        <div id="myDropdown" class="dropdown-content">
+        <a href="#"> Argentina </a>
+        <a href="#"> France </a>
+        <a href="#"> United States of America </a>
+  </div>
 
-        <div> <img src = "pic1.jpg" width = 100%> </div>
-        <div> <img src = "pic2.jpg" width = 100% > </div>
-        <div> <img src = "pic3.jpg" width = 100% > </div>
-        <div> <img src = "pic4.jpg" width = 100% > </div>
-        <div> <img src = "pic5.jpg" width = 100% > </div>
-        <div> <img src = "pic6.jpg" width = 100% > </div>
+  <div class="cascading">
+  <form name="form1" id="form1" action="/action_page.php">
+  Subjects: <select name="subject" id="subject">
+    <option value="" selected="selected">Select subject</option>
+  </select>
+  <br><br>
+  Topics: <select name="topic" id="topic">
+    <option value="" selected="selected">Please select subject first</option>
+  </select>
+  <br><br>
+  Chapters: <select name="chapter" id="chapter">
+    <option value="" selected="selected">Please select topic first</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit"> 
+</form>
+</div>
+
+<div class="dropdown2">
+  <button onclick="myFunction2()" class="dropbtn2">Dropdown</button>
+  <div id="myDropdown2" class="dropdown-content2">
+    <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()">
+    <a href="#Subject 1"> Subject 1 </a>
+    <a href="Subject 2">Subject 2</a>
+    <a href="Subject 3">Subject 3</a>
+    <a href="Subject 4">Subject 4</a>
+    <a href="Subject 5">Subject 5</a>
+    <a href="Subject 6">Subject 6</a>
+    <a href="Subject 7">Subject 7</a>
+  </div>
+
+  <div class = "paragraph">
+
     
-    </div>
+  Just some examples of what I can do ! Some more exaples include Side down bars on scroll, dropdowns in top and sidenavs, subnavigation menus and more.
+
+ </div>
 
     </body>
+
+    <script>
+    /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+var subjectObject = {
+  "Subject 1": {
+    "HTML": ["Links", "Images", "Tables", "Lists"],
+    "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
+    "JavaScript": ["Variables", "Operators", "Functions", "Conditions"] 
+  },
+  "Subject 2": {
+    "PHP": ["Variables", "Strings", "Arrays"],
+    "SQL": ["SELECT", "UPDATE", "DELETE"]
+  }
+}
+
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //display correct values 
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+  document.getElementById("myDropdown2").classList.toggle("show");
+}
+
+function filterFunction2() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown2");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+</script>
 
 
 <div id = "bottom">
